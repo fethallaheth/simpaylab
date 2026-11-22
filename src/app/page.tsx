@@ -109,12 +109,6 @@ export default function Dashboard() {
         ))}
       </section>
 
-      <footer className="flex flex-wrap items-center justify-between gap-3 pt-1 text-[11px] text-zinc-500">
-        <span>{t(locale, "dash.illustrative")}</span>
-        <Link href="/safety" className="font-medium text-zinc-600 underline decoration-zinc-300 underline-offset-4 hover:text-zinc-900 hover:decoration-zinc-500 dark:text-zinc-400 dark:hover:text-zinc-100">
-          {t(locale, "safe.title")}
-        </Link>
-      </footer>
-    </div>
+      </div>
   );
 }

@@ -41,8 +41,8 @@ function Footer() {
   return (
     <footer className="mt-12 border-t border-zinc-200 py-6 text-[12px] text-zinc-500 dark:border-zinc-800 dark:text-zinc-400 print:hidden">
       <div className="mx-auto flex max-w-[1240px] flex-wrap items-center justify-between gap-3 px-4 sm:px-6">
-        <span>Code open source — <a href="https://github.com/ben333" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-300 underline-offset-2 hover:text-zinc-800">GitHub</a></span>
-        <span>Fethallah Benmokhatr · <a href="mailto:fethallahbenmokhtar@gmail.com" className="underline decoration-zinc-300 underline-offset-2 hover:text-zinc-800">fethallahbenmokhtar@gmail.com</a> · <a href="https://www.linkedin.com/in/fethallah-benmokhatr" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-300 underline-offset-2 hover:text-zinc-800">LinkedIn</a></span>
+        <span>Code open source — <a href="https://github.com/fethallaheth/simpaylab" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-300 underline-offset-2 hover:text-zinc-800">GitHub</a></span>
+        <span><a href="mailto:fethallahbenmokhtar@gmail.com" className="underline decoration-zinc-300 underline-offset-2 hover:text-zinc-800">fethallahbenmokhtar@gmail.com</a> · <a href="https://www.linkedin.com/in/fethallahbenmokhtar/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-300 underline-offset-2 hover:text-zinc-800">LinkedIn</a></span>
       </div>
     </footer>
   );
