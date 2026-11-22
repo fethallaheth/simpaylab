@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Cool-tinted neutrals: zinc shifted toward the signal-blue hue so the
+   shell feels like one material under lecture-hall light. */
+@theme {
+  --color-white: oklch(99.7% 0.002 250);
+  --color-zinc-50: oklch(98.4% 0.003 250);
+  --color-zinc-100: oklch(96.4% 0.005 250);
+  --color-zinc-200: oklch(91.6% 0.008 250);
+  --color-zinc-300: oklch(85.2% 0.01 250);
+  --color-zinc-400: oklch(68% 0.012 250);
+  --color-zinc-500: oklch(54% 0.014 250);
+  --color-zinc-600: oklch(44% 0.014 250);
+  --color-zinc-700: oklch(35.5% 0.013 250);
+  --color-zinc-800: oklch(27% 0.012 250);
+  --color-zinc-900: oklch(21% 0.01 250);
+  --color-zinc-950: oklch(14.5% 0.009 250);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+:root {
+  --background: oklch(98.4% 0.003 250);
+  --foreground: oklch(22% 0.01 250);
+  color-scheme: light;
+}
+
+/* Class-driven dark mode (TopNav toggle) is the single source of truth. */
+.dark {
+  --background: oklch(14.5% 0.009 250);
+  --foreground: oklch(96% 0.004 250);
+  color-scheme: dark;
+}
+
+:focus-visible {
+  outline: 2px solid oklch(45% 0.02 250);
+  outline-offset: 2px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  font-feature-settings: "cv11", "ss01";
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+  letter-spacing: -0.022em;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+::selection {
+  background: oklch(86% 0.01 250);
+  color: oklch(22% 0.02 250);
+}
+
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Projector mode: large type, high contrast, simplified chrome */
+.projector {
+  font-size: 19px;
+}
+.projector main {
+  max-width: 1180px;
+}
+.projector .text-\[13px\],
+.projector .text-\[12px\],
+.projector .text-\[11px\] {
+  font-size: 1.02rem;
+}
+
+/* RTL: logical properties already used (ms-/me-/ps-/pe-/start);
+   ensure tables and code blocks keep LTR where needed. */
+[dir="rtl"] pre,
+[dir="rtl"] .font-mono {
+  direction: ltr;
+  unicode-bidi: embed;
+}
+[dir="rtl"] table {
+  direction: rtl;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media print {
+  header,
+  button {
+    display: none !important;
+  }
+}

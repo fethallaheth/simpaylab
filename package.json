@@ -1,0 +1,40 @@
+{
+  "name": "simulation",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "dev:wsl": "WATCHPACK_POLLING=true CHOKIDAR_USEPOLLING=true next dev --webpack",
+    "dev:wsl:fresh": "rm -rf .next && WATCHPACK_POLLING=true CHOKIDAR_USEPOLLING=true next dev --webpack",
+    "dev:fresh": "rm -rf .next && next dev",
+    "stop": "pkill -f \"next-serve[r]\" || true; pkill -f \"[n]ext dev\" || true; fuser -k 3000/tcp 2>/dev/null || true",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit && pnpm --filter @sim/engine typecheck && pnpm --filter @sim/content typecheck",
+    "test": "pnpm --filter @sim/engine test"
+  },
+  "dependencies": {
+    "@sim/content": "workspace:*",
+    "@sim/engine": "workspace:*",
+    "dexie": "^4.0.11",
+    "framer-motion": "^12.0.0",
+    "next": "16.4.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "react-qr-code": "^2.0.15"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
+    "@tailwindcss/turbopack": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.0",
+    "postcss": "^8.5.29",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  },
+  "packageManager": "pnpm@10.19.0"
+}

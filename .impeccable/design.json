@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-11T00:00:00Z",
+  "title": "Design System: SimPay Lab",
+  "extensions": {
+    "colorMeta": {
+      "signal-blue": { "role": "primary", "displayName": "Signal Blue", "canonical": "oklch(63% 0.15 245)", "tonalRamp": ["oklch(20% 0.08 245)", "oklch(35% 0.12 245)", "oklch(50% 0.14 245)", "oklch(63% 0.15 245)", "oklch(72% 0.12 245)", "oklch(82% 0.08 245)", "oklch(90% 0.05 245)", "oklch(96% 0.02 245)"] },
+      "caution-amber": { "role": "secondary", "displayName": "Caution Amber", "canonical": "oklch(86% 0.15 85)", "tonalRamp": ["oklch(25% 0.08 85)", "oklch(40% 0.11 85)", "oklch(55% 0.13 85)", "oklch(70% 0.14 85)", "oklch(86% 0.15 85)", "oklch(90% 0.1 85)", "oklch(94% 0.06 85)", "oklch(97% 0.03 85)"] },
+      "settled-green": { "role": "tertiary", "displayName": "Settled Green", "canonical": "oklch(60% 0.15 160)", "tonalRamp": ["oklch(20% 0.07 160)", "oklch(32% 0.11 160)", "oklch(45% 0.14 160)", "oklch(60% 0.15 160)", "oklch(72% 0.12 160)", "oklch(82% 0.08 160)", "oklch(91% 0.05 160)", "oklch(96% 0.02 160)"] },
+      "failure-red": { "role": "tertiary", "displayName": "Failure Red", "canonical": "oklch(58% 0.2 25)", "tonalRamp": ["oklch(22% 0.09 25)", "oklch(35% 0.14 25)", "oklch(47% 0.18 25)", "oklch(58% 0.2 25)", "oklch(70% 0.15 25)", "oklch(81% 0.1 25)", "oklch(90% 0.05 25)", "oklch(96% 0.02 25)"] },
+      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "oklch(28% 0.01 280)", "tonalRamp": ["oklch(15% 0.005 280)", "oklch(28% 0.01 280)", "oklch(40% 0.01 280)", "oklch(55% 0.01 280)", "oklch(70% 0.008 280)", "oklch(82% 0.005 280)", "oklch(92% 0.003 280)", "oklch(97% 0.002 280)"] },
+      "paper": { "role": "neutral", "displayName": "Paper", "canonical": "oklch(100% 0 0)", "tonalRamp": ["oklch(60% 0 0)", "oklch(70% 0 0)", "oklch(80% 0 0)", "oklch(88% 0 0)", "oklch(94% 0 0)", "oklch(97% 0 0)", "oklch(99% 0 0)", "oklch(100% 0 0)"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Dashboard title only; balanced wrap, -0.02em." },
+      "headline": { "displayName": "Headline", "purpose": "Simulator module titles." },
+      "title": { "displayName": "Title", "purpose": "Pane headers, card titles, quiz questions." },
+      "body": { "displayName": "Body", "purpose": "Explanations and lesson copy, 65-75ch." },
+      "label": { "displayName": "Label", "purpose": "Field labels, badges, timeline meta." },
+      "mono": { "displayName": "Machine Mono", "purpose": "Ids, amounts, payloads — the machine register." }
+    },
+    "shadows": [
+      { "name": "module-hover", "value": "0 4px 12px rgba(0,0,0,0.08)", "purpose": "Dashboard module cards answering hover only." }
+    ],
+    "motion": [
+      { "name": "ease-out-expo", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Entrance accents for stage transitions, <=300ms." },
+      { "name": "state-fade", "value": "opacity 150ms ease-out", "purpose": "Button/hover state changes; instant under reduced motion." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Default action. Ink fill, quiet; hover deepens.",
+      "html": "<button class=\"ds-btn-primary\">Run simulation</button>",
+      "css": ".ds-btn-primary { background: #18181b; color: #ffffff; border: none; border-radius: 8px; padding: 8px 16px; font-size: 14px; font-weight: 500; cursor: pointer; transition: background 150ms ease-out; } .ds-btn-primary:hover { background: #3f3f46; } .ds-btn-primary:focus-visible { outline: 2px solid #0284c7; outline-offset: 2px; } .ds-btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Adjacent/secondary actions next to a primary.",
+      "html": "<button class=\"ds-btn-outline\">Reset to seed</button>",
+      "css": ".ds-btn-outline { background: #ffffff; color: #18181b; border: 1px solid #e4e4e7; border-radius: 8px; padding: 8px 16px; font-size: 14px; font-weight: 500; cursor: pointer; transition: background 150ms ease-out; } .ds-btn-outline:hover { background: #fafafa; } .ds-btn-outline:focus-visible { outline: 2px solid #0284c7; outline-offset: 2px; }"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Parameter and demo-data entry with label above.",
+      "html": "<label class=\"ds-field\">Seed<input class=\"ds-input\" value=\"42\" /></label>",
+      "css": ".ds-field { display: block; font-size: 13px; font-weight: 500; color: #52525b; } .ds-input { display: block; width: 100%; margin-top: 4px; background: #ffffff; color: #18181b; border: 1px solid #e4e4e7; border-radius: 8px; padding: 6px 10px; font-size: 14px; } .ds-input:focus { outline: none; border-color: #0284c7; }"
+    },
+    {
+      "name": "State Badge",
+      "kind": "chip",
+      "refersTo": "badge-state",
+      "description": "Actor, state, and concept tags. Color always means state.",
+      "html": "<span class=\"ds-badge ds-badge-ok\">SETTLED</span>",
+      "css": ".ds-badge { display: inline-block; border-radius: 9999px; padding: 2px 8px; font-size: 12px; font-weight: 600; background: #f4f4f5; color: #52525b; } .ds-badge-ok { background: #d1fae5; color: #065f46; } .ds-badge-err { background: #fee2e2; color: #991b1b; } .ds-badge-info { background: #e0f2fe; color: #0c4a6e; }"
+    },
+    {
+      "name": "Pane Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "The three simulator panes and dashboard modules. Flat at rest.",
+      "html": "<div class=\"ds-card\"><h3 class=\"ds-card-t\">Timeline</h3><p>Pane content.</p></div>",
+      "css": ".ds-card { background: #ffffff; color: #18181b; border: 1px solid #e4e4e7; border-radius: 12px; padding: 12px; box-shadow: none; } .ds-card-t { font-size: 14px; font-weight: 600; margin: 0 0 8px; }"
+    },
+    {
+      "name": "Top Navigation",
+      "kind": "nav",
+      "refersTo": "button-outline",
+      "description": "Wordmark, four links, locale/theme/projector/lecturer controls.",
+      "html": "<header class=\"ds-topnav\"><strong>SimPay <em>Lab</em></strong><nav><a href=\"#\">Dashboard</a></nav></header>",
+      "css": ".ds-topnav { display: flex; align-items: center; gap: 8px; padding: 10px 16px; border-bottom: 1px solid #e4e4e7; font-size: 14px; } .ds-topnav a { padding: 4px 8px; border-radius: 8px; color: #18181b; text-decoration: none; } .ds-topnav a:hover { background: #f4f4f5; } .ds-topnav em { color: #0284c7; font-style: normal; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Whiteboard Lab",
+    "overview": "A neutral board with a vivid mechanism. The shell is quiet zinc and white so that color always means state: amber for holds and waiting, green for settled, red for failures, blue for information and selection.",
+    "keyCharacteristics": ["Quiet instruments: restrained controls; the simulation visuals carry energy.", "State-colored, chrome-neutral: <=10% accent per screen; rarity is the point.", "Mono for machines, sans for humans.", "Flat by default: borders and tone separate surfaces; shadow answers hover."],
+    "rules": [
+      { "name": "The Signal Rule", "body": "Color always means state, never decoration.", "section": "colors" },
+      { "name": "The Banner Rule", "body": "Caution Amber appears exactly once per screen plus transient waiting states.", "section": "colors" },
+      { "name": "The Two Registers Rule", "body": "Machine values are always mono; human prose never is.", "section": "typography" },
+      { "name": "The Balance Rule", "body": "h1-h3 use balanced wrapping; long prose uses pretty wrapping.", "section": "typography" },
+      { "name": "The Flat-By-Default Rule", "body": "Shadows appear only as a response to state.", "section": "elevation" }
+    ],
+    "dos": ["Do keep accent coverage <=10% per screen.", "Do set machine values in mono at 11-12px.", "Do use full 1px hairline borders; reserve blue for selection.", "Do raise type and contrast in projector mode.", "Do keep the amber simulation banner on every screen, exactly once.", "Do honor prefers-reduced-motion."],
+    "donts": ["Don't clone fintech brands or their UI.", "Don't build marketing-landing patterns.", "Don't use side-stripe borders on cards or rows.", "Don't pair a 1px border with a >=16px soft shadow.", "Don't round cards beyond 16px.", "Don't animate layout properties or gate content on reveals."]
+  }
+}
